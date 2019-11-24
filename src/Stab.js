@@ -6,25 +6,27 @@ import './Stab.css';
 
 class Stab extends Component{
     
+    static defaultProps = {
+        allColors: ["purple", "magenta", "violet", "pink", "green", "#7171ff", "#c0ffd6", "#ff8c8c"]    
+    };
+
     constructor(props) {
         super(props);
         this.state = { 
-            color: choice(this.props.colors),
-            wert: this.props.wert
+            color: choice(this.props.allColors)
         };
     }
     
     render(){
-        console.log(this.props.e); 
         return(
             <div 
                 className="stab" 
                 style={{ 
                     backgroundColor: this.state.color,
-                    width: this.state.wert * 3,
+                    height: this.props.wert * 4.5,
                 }}
             >
-            <div className="stab-wert">{this.state.wert}</div>
+            <div className="stab-wert">{this.props.wert}</div>
             </div> 
         )
     }
