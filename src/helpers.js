@@ -1,4 +1,19 @@
-/** Return a random item from a list. */
+// async function sound(freq){
+  
+//   const audioCtx = new (window.AudioContext || window.webkitAudioContext)();  
+//     // create Oscillator node
+//   const oscillator = audioCtx.createOscillator();
+//   oscillator.connect(audioCtx.destination);
+  
+  
+//   oscillator.start();
+//   oscillator.frequency.value = freq;
+//   // oscillator.detune.setValueAtTime(100, audioCtx.currentTime); // value in cents
+  
+//   setTimeout(() => {
+//     oscillator.stop();  
+//   }, 100);
+// }
 
 function choice(arr) {
   let randomIndex = Math.floor(Math.random() * arr.length);
@@ -22,11 +37,6 @@ function ranValues(n){
   return arrayValues;
 }
 
-function soundPlay(){
-  let play = "www";
-  play.play();
-}
-
 function bubbleSort(zahl){
     let sortiert = false;
     let n = zahl.length;
@@ -41,7 +51,7 @@ function bubbleSort(zahl){
         // });
         //  console.log(einzelSchritt);
         einzelSchritteArray.push(einzelSchrittPuffer);
-        console.log(einzelSchritteArray);
+        // console.log(einzelSchritteArray);
         
         sortiert = true;
         for (let i = 0; i < n - 1; i++) {
@@ -59,28 +69,6 @@ function bubbleSort(zahl){
       
     // console.log("Array:  ",einzelSchritteArray);
     return einzelSchritteArray;
-    
-    
-   
-    
 }
-
-// function* idMaker(zahl) {
-//   let counter = 0;
-//     while(counter < zahl.length){
-//       yield zahl[counter];
-//       counter += 1;
-//     }
-// }
-
-// function setup() {
-
-// }
-
-// function draw() {
-//   ellipse(50, 50, 80, 80);
-// }
-
-
 
 export { choice, values, bubbleSort, ranValues };

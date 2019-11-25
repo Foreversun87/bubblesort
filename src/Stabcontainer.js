@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './Stabcontainer.css';
-import { bubbleSort, ranValues } from "./helpers";
+import { bubbleSort, ranValues} from "./helpers";
+import Sketch from 'react-p5';
 import Stab from './Stab';
-
-
 
 class Stabcontainer extends Component{
     static defaultProps = {
+        maxValues: 180,
         allWerts: bubbleSort(ranValues(180)),
         counter: 0
     };
@@ -15,15 +15,16 @@ class Stabcontainer extends Component{
         super(props);
         // TODO: set initial state
         this.state = {
-        completed: false,
-        aktBoard: this.props.allWerts[0],
-        counter: 1
+            completed: false,
+            aktBoard: this.props.allWerts[0],
+            counter: 1
+            // highBeep: 2000
         };
-
+        
         this.handleClick = this.handleClick.bind(this);
         this.incrementCounter = this.incrementCounter.bind(this);
         this.onFinishing = this.onFinishing.bind(this);
-
+        
       }
     
     handleClick(evt){
@@ -31,14 +32,17 @@ class Stabcontainer extends Component{
             if(this.state.counter <= this.props.allWerts.length - 1){
                 this.setState({ 
                     aktBoard: this.props.allWerts[this.state.counter],
-                    counter: this.incrementCounter(this.state)            
+                    counter: this.incrementCounter(this.state),
+                    highBeep: this.state.highBeep - 10            
                 });
                 this.checkCounter();
+                // sound(this.state.highBeep);
+
 
             }else{
                 clearInterval();
             }
-        }, 300);    
+        }, 100);    
     }
 
     onFinishing(){
@@ -52,13 +56,12 @@ class Stabcontainer extends Component{
     }
 
     componentDidUpdate(a,b){
-        console.log("Component Update: ", a,b);
         
     }
 
     checkCounter(){
         // console.log("checkCounter: ", this.state.counter, "allWerts.length: ", this.props.allWerts.length )
-        if(this.state.counter >= this.props.allWerts.length - 1){
+        if(this.state.counter >= this.props.allWerts.length){
             this.setState(
                 {completed: true}
             );
@@ -70,19 +73,23 @@ class Stabcontainer extends Component{
     }
     
     render(){
+        // sound(freq);
+        
         const aktBoard = this.state.aktBoard;
            let staebe = aktBoard.map((e , y) => (
                 <Stab 
                 wert={aktBoard[y]}
                 key={y}
                 />
+                                
               ));
-          console.log(staebe);
+        //   console.log(staebe);
         return(
             <div>
                 <div className='stabContainer'>{staebe}</div>
                 {!this.state.completed ? (
                     <center><button className="stabContainerButton" onClick={this.handleClick}>Algorithmus starten</button></center>
+                    
                 ):( 
                     <div><center>Fertig</center></div>
                 ) }

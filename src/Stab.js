@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { choice } from "./helpers";
+import { choice, sound } from "./helpers";
 import './Stab.css';
 
 
@@ -17,6 +17,10 @@ class Stab extends Component{
         };
     }
     
+    componentDidUpdate(a,b){
+        
+    }
+
     render(){
         return(
             <div 
@@ -27,7 +31,8 @@ class Stab extends Component{
                 }}
             >
             <div className="stab-wert">{this.props.wert}</div>
-            </div> 
+            </div>
+             
         )
     }
 }
