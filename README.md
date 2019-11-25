@@ -7,4 +7,4 @@
 
 <img scr="assets\images\overview1.jpg" height="50%" width="50%" >
 
-<img src="assets\images\overview1.jpg" height="50%" width="50%" >
+<center><img src="assets\images\overview1.jpg" height="50%" width="50%" ></center>
