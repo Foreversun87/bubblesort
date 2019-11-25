@@ -1,7 +1,7 @@
 # Installationsanleitung
 
 * NPM muss installiert sein
-* Repo clonen <div style="background-color: red; width: 10px; height: 10px;"></div>
+* Repo clonen 
 * Zum installieren, im Stammverzeichnis wechseln und **npm install** eingeben.
 * Danach **npm start**.
 
@@ -11,3 +11,6 @@ Der Algorithmus Bubblesort mit React visualisiert.
 <center><img src="assets\images\overview1.jpg" height="50%" width="50%" ></center> 
 <center><img src="assets\images\overview2.jpg" height="50%" width="50%" ></center> 
 <center><img src="assets\images\overview3.jpg" height="50%" width="50%" ></center> 
+
+
+<div style="background-color: red; width: 10px; height: 10px;"></div>
