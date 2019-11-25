@@ -13,4 +13,4 @@ Der Algorithmus Bubblesort mit React visualisiert.
 <center><img src="assets\images\overview3.jpg" height="50%" width="50%" ></center> 
 
 
-<div style="background-color: red; width: 10px; height: 10px;"></div>
+
