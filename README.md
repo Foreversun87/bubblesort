@@ -1,8 +1,7 @@
 # Installationsanleitung
 
 * NPM muss installiert sein
-* Repo clonen 
-<div style="background-color: red; height: 10px; width: 10px;"></div>
+* Repo clonen <div style=" background-color: red; height: 10px; width: 10px; "></div>
 * Zum installieren, im Stammverzeichnis wechseln und **npm install** eingeben.
 * Danach **npm start**.
 
