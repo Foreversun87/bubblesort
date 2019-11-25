@@ -5,3 +5,4 @@
 * Zum installieren, im Stammverzeichnis wechseln und **npm install** eingeben.
 * Danach **npm start**.
 
+<img scr=""></img>
