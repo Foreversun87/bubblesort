@@ -1,38 +1,33 @@
-import React, {Component} from 'react';
-import { choice, sound } from "./helpers";
+import React, { Component } from 'react';
+import { choice } from "./helpers";
 import './Stab.css';
 
+class Stab extends Component {
 
-
-class Stab extends Component{
-    
     static defaultProps = {
-        allColors: ["purple", "magenta", "violet", "pink", "green", "#7171ff", "#c0ffd6", "#ff8c8c"]    
+        // allColors: ["purple", "magenta", "violet", "pink", "green", "#7171ff", "#c0ffd6", "#ff8c8c"]
+        // allColors: ["white"]
     };
 
     constructor(props) {
         super(props);
-        this.state = { 
-            color: choice(this.props.allColors)
-        };
-    }
-    
-    componentDidUpdate(a,b){
-        
+        // this.state = {
+        //     color: choice(this.props.allColors)
+        // };
     }
 
-    render(){
-        return(
-            <div 
-                className="stab" 
-                style={{ 
-                    backgroundColor: this.state.color,
-                    height: this.props.wert * 4.5,
+    render() {
+        return (
+            <div
+                className={`stab  ${this.props.className}`}
+                style={{
+                    // backgroundColor: this.state.color,
+                    height: this.props.wert * 4.0,
                 }}
-            >
-            <div className="stab-wert">{this.props.wert}</div>
+                onAnimationStart={() => console.log("OnAnimationFire")}>
+                <span>{this.props.wert}</span>
             </div>
-             
+
         )
     }
 }
