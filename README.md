@@ -8,4 +8,4 @@
 # Beschreibung
 Der Algorithmus Bubblesort mit React visualisiert.
 
-(https://youtu.be/TvtXrdjUid8)[Video]
+[Video](https://youtu.be/TvtXrdjUid8)
