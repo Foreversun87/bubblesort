@@ -29,6 +29,9 @@ function ranValues(n) {
   return arrayValues;
 }
 
+
+
+
 function bubbleSort(zahl) {
   // Dieses Array wird mit einzelnen Schritten befüllt
   let einzelSchritteArray = [];

@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Stabcontainer from './Stabcontainer';
+import Dashboard from "./Dashboard";
 
 function App() {
   return (
-    <div>
-      <Stabcontainer />
+    <div className="app">
+      <Dashboard />
     </div>
   );
 }

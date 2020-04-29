@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { choice } from "./helpers";
 import './Stab.css';
 
 class Stab extends Component {
@@ -22,7 +21,7 @@ class Stab extends Component {
                 className={`stab  ${this.props.className}`}
                 style={{
                     // backgroundColor: this.state.color,
-                    height: this.props.wert * 4.0,
+                    height: this.props.wert * 1.5,
                 }}
                 onAnimationStart={() => console.log("OnAnimationFire")}>
                 <span>{this.props.wert}</span>
