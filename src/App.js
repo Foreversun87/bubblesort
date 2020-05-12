@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
 import Dashboard from "./Dashboard";
+import BubblesortContextProvider from "./components/bubblesort/BubblesortContext";
 
 function App() {
   return (
     <div className="app">
-      <Dashboard />
+      <BubblesortContextProvider>
+        <Dashboard />
+      </BubblesortContextProvider>
     </div>
   );
 }

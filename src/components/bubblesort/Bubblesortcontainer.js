@@ -1,24 +1,14 @@
 import React, { Component } from 'react';
 import './Bubblesortcontainer.css';
-import Stab from './Stab';
-
-// https://www.npmjs.com/package/react-sound
+import Stab from '../../Stab';
+import { BubblesortContext } from "./BubblesortContext";
 
 class Bubblesortcontainer extends Component {
-    constructor(props){
-        super(props);
-    }
-
-
+    static contextType = BubblesortContext;
+    
     render() {
-        const aktBoard = this.props.aktBoardOne;
-        const paerchen = this.props.thomasChangeFunction(aktBoard);
-
-
-        // console.log("parchen", paerchen);
-        // console.log(this.state.counter);
-        // if (this.state.counter) {
-
+        const {aktBoard} = this.context;
+        const paerchen = this.context.thomasChangeFunction(aktBoard);
         const staebe = aktBoard.map((e, y) => {
             //               1                                1  
             //            Ausdruck                        Ausdruck  
@@ -49,19 +39,15 @@ class Bubblesortcontainer extends Component {
                 )
             }
         });
-        // }
-        // console.log(this.props.allWerts);
         return (
-                <div className='container'>
-                    <div className="bubblesortContainer">
-                        {staebe}
-                    </div>
-
+            <div className='container'>
+                <div className="bubblesortContainer">
+                    {staebe}
                 </div>
+            </div>
         )
     }
 }
-
 export default Bubblesortcontainer;
 
 // Pos       0  1  2  3  4  

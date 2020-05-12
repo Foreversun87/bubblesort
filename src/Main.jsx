@@ -1,5 +1,5 @@
 import React from "react";
-import Bubblesortcontainer from './Bubblesortcontainer';
+import Bubblesortcontainer from './components/bubblesort/Bubblesortcontainer';
 import "./Main-style.css"
 
 export default class Main extends React.Component{
@@ -10,9 +10,9 @@ export default class Main extends React.Component{
     render(){
         return(
                 <div className="main">
-                <Bubblesortcontainer aktBoardOne={this.props.aktBoardOne} thomasChangeFunction={this.props.thomasChangeFunction} />
-                <Bubblesortcontainer aktBoardOne={this.props.aktBoardOne} thomasChangeFunction={this.props.thomasChangeFunction} />
-                <Bubblesortcontainer aktBoardOne={this.props.aktBoardOne} thomasChangeFunction={this.props.thomasChangeFunction} />
+                <Bubblesortcontainer  />
+                <Bubblesortcontainer  />
+                <Bubblesortcontainer  />
                 </div>    
         )
     }

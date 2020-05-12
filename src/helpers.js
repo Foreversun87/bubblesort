@@ -22,7 +22,7 @@ function choice(arr) {
 function ranValues(n) {
   let arrayValues = []
   for (let index = 0; index < n; index++) {
-    let randomValue = Math.floor(Math.random() * n);
+    let randomValue = Math.ceil(Math.random() * 100);
     arrayValues.push(randomValue);
 
   }
@@ -32,7 +32,7 @@ function ranValues(n) {
 
 
 
-function bubbleSort(zahl) {
+function bubbleSort(zahl, timer) {
   // Dieses Array wird mit einzelnen Schritten befüllt
   let einzelSchritteArray = [];
   //passed by reference >> einzelSchrittArray erhält die Werte von zahl jedoch nicht die Referenzen
@@ -56,4 +56,30 @@ function bubbleSort(zahl) {
   return einzelSchritteArray;
 }
 
-export { choice, bubbleSort, ranValues, sound };
+function bubbleSortFirstStep(zahl, timer) {
+  // Dieses Array wird mit einzelnen Schritten befüllt
+  let einzelSchritteArray = [];
+  //passed by reference >> einzelSchrittArray erhält die Werte von zahl jedoch nicht die Referenzen
+    // Umgehung durch [].concat() oder auch {...zahl} bei Objekten
+  //Wichtig
+  einzelSchritteArray.push([].concat(zahl));
+  let sortiert = false;
+  do {
+    sortiert = true;
+    for (let i = 0; i < zahl.length; i++) {
+      if (zahl[i] > zahl[i + 1]) {
+        sortiert = false;
+        let puffer = zahl[i];
+        zahl[i] = zahl[i + 1];
+        zahl[i + 1] = puffer;
+        einzelSchritteArray.push([].concat(zahl));
+      } 
+    }
+  } while (!sortiert);
+  // console.log(einzelSchritteArray);
+  return einzelSchritteArray[0];
+}
+
+// console.log(typeof(bubbleSortFirstStep([51, 26, 50, 70, 40])));
+
+export { choice, bubbleSort, bubbleSortFirstStep, ranValues, sound };
