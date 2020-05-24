@@ -1,34 +1,39 @@
 .stab{
+  display: grid;
   /* transition: 0.5s; */
-  background-color: white;
+  background-color: #fc8a2d;
   /* padding: 15px 15px; */
-  border: 3.5px solid white;
+  /* border: 3.5px solid white; */
   margin: 10px;
   min-height: 25px;
-  width: 2.5%;
+  width: 5.5%;
 }
 
 .thomas{
   background-color: red;
+  border: 1px solid #2a6968;
   animation: driveThomas 0.1s 0.4s normal forwards;
 }
 
 .willLinks{
   background-color: green;
+  border: 1px solid #2a6968;
   animation: driveWillLinks 0.1s 0.4s normal forwards;
 }
 
 @keyframes driveThomas{
   from{transform:translateX(0px)}
-  to{transform:translateX(77px)}
+  to{transform:translateX(72px)}
 }
 
 @keyframes driveWillLinks{
   from{transform:translateX(0px)}
-  to{transform:translateX(-77px)}
+  to{transform:translateX(-72px)}
 }
 
 .white{
-  background-color: white;
+  background-color: #8ad0ff;
+  /* border-radius: 10%; */
+  border: 1px solid #2a6968;
   /* transition: .5s; */
 }

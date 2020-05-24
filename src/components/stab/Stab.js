@@ -21,10 +21,13 @@ class Stab extends Component {
                 className={`stab  ${this.props.className}`}
                 style={{
                     // backgroundColor: this.state.color,
+                    display: "absolute",
                     height: this.props.wert * 1.5,
+                    fontSize: ".6rem",
+                    textAlign: "center"
                 }}
                 onAnimationStart={() => console.log("OnAnimationFire")}>
-                <span>{this.props.wert}</span>
+                {this.props.wert}
             </div>
 
         )

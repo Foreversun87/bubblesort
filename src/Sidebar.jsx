@@ -1,26 +1,27 @@
 import React from "react";
-import {BubblesortContext} from "./components/bubblesort/BubblesortContext";
-import { Route, Switch, Link} from 'react-router-dom'
+import { BubblesortContext } from "./components/bubblesort/BubblesortContext";
+import { Link } from 'react-router-dom'
 
-export default class Sidebar extends React.Component{
+export default class Sidebar extends React.Component {
     static contextType = BubblesortContext;
-    
-    constructor(props){
+    constructor(props) {
         super(props);
     }
-
-    render(){
-        return(
+    render() {
+        return (
             <div className="sidebar">
-                <a href="https://www.w3schools.com/nodejs/nodejs_mysql_select.asp">MYSQL</a>
-                <div>
-                    <p>Hello from Sidebar</p>
-                    {this.context.start ? <button onClick={null}>Start</button> : <button onClick={this.context.handleClickStart}>Start</button>  }
-                    <button onClick={this.context.handleClickReload}>Reload</button>
-                    <Link to="/view">Übersicht</Link>
+                <div className="sidebar-completed">
+                    Fertig: {this.context.completedCheck() ? `ja` : `nein`}
+                    {/* <div className="sidebar-completed1"></div>
+                    <div className="sidebar-completed2"></div>
+                    <div className="sidebar-completed3"></div> */}
                 </div>
-                <div>
-                    Schritte: {this.context.counter}, Fertig: {this.context.completed ? `ja` : `nein`}
+                <div className="sidebar-buttonContainer">
+                    {this.context.start ? <button onClick={null}>Start</button> : <button onClick={this.context.handleClickStart}>Start</button>}
+                    <button onClick={this.context.handleClickReload}>Reload</button>
+                </div>
+                <div className="sidebar-view" style={this.context.completedCheck() ? {backgroundColor: "green"} : null }>
+                    {this.context.completedCheck() ? <Link to="/view">Übersicht</Link> : null}
                 </div>
             </div>
         )

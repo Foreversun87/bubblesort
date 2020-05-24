@@ -9,3 +9,7 @@
 Der Algorithmus Bubblesort mit React visualisiert.
 
 [Video](https://youtu.be/TvtXrdjUid8)
+
+## Punkte
+* Überprüfen der hanoi.js
+* Überprüfen der Lifecycle-Methoden 

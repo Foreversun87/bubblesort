@@ -1,0 +1,87 @@
+.hanoi-scheibe0{
+    height: 1%;
+    width: 10%;
+    background-color: royalblue;
+    border-radius: 5px; 
+    transform:translateY(-150%);
+    z-index: 2;
+    position: fixed;
+    transition: all ease 2.5s;
+}
+
+.hanoi-scheibe1{
+    height: 1%;
+    width: 9.5%;
+    background-color: red;
+    border-radius: 5px; 
+    transform:translateY(-270%);
+    z-index: 2;
+    position: fixed;
+    transition: all ease 2.5s;
+}
+
+.hanoi-scheibe2{
+    height: 1%;
+    width: 9.0%;
+    background-color: rgb(0, 255, 0);
+    border-radius: 5px; 
+    transform:translateY(-390%);
+    z-index: 2;
+    position: fixed;
+    transition: all ease 2.5s;
+}
+
+.hanoi-scheibe3{
+    height: 1%;
+    width: 8.5%;
+    background-color: rgb(60, 37, 136);
+    border-radius: 5px; 
+    transform:translateY(-510%);
+    z-index: 2;
+    position: fixed;
+    transition: all ease 2.5s;
+}
+
+.hanoi-scheibe4{
+    height: 1%;
+    width: 8.0%;
+    background-color: rgb(216, 230, 22);
+    border-radius: 5px; 
+    transform:translateY(-630%);
+    z-index: 2;
+    position: fixed;
+    transition: all ease 2.5s;
+}
+
+/* 
+            #####    Animation    #####
+ */
+ .vonLiNachMi{
+    animation: vonLiNachMi 4.0s normal forwards infinite;
+}
+
+.vonLiNachRe{
+    animation: vonLiNachRe 4.0s normal forwards infinite;
+}
+
+.vonMiNachLi{
+    animation: vonLiNachMi 4.0s reverse forwards infinite;
+}
+
+.vonReNachLi{
+    animation: vonLiNachRe 4.0s reverse forwards infinite;
+}
+
+@keyframes vonLiNachMi{
+    0%{transform:translateY(-150%) translateX(0px)}
+    33%{transform:translateY(-2300%)}
+    66%{transform:translateY(-2300%) translateX(199%)}
+    100%{transform:translateY(-150%) translateX(199%)}
+}
+
+@keyframes vonLiNachRe{
+    0%{transform:translateY(-150%) translateX(0px)}
+    33%{transform:translateY(-2300%)}
+    66%{transform:translateY(-2300%) translateX(397%)}
+    100%{transform:translateY(-150%) translateX(397%)}
+}

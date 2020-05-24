@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 
-export default class View extends React.Component {
+
+export default class Viewer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,25 +18,25 @@ export default class View extends React.Component {
         });
     }
 
-    render() {
+    componentWillUnmount() {
+        console.log("OH NO UNMOUNT")
+    }
 
+    render() {
         const lines = this.state.data.map(e => (
-            <p key={e.id}>Der Datumsstempel: <strong>{e.datumsstempel}</strong>   
-            und die Art des Algorithmus: <strong>{e.art}</strong> 
+            <p key={e.id}>Der Datumsstempel: <strong>{e.datumsstempel} </strong>
+            und die Art des Algorithmus: <strong>{e.art} </strong>
              und die Schritte: <strong> {e.schritte} </strong> </p>)
         );
 
-        // const cards = this.state.data.map(c => (
-        //     <p key={c.id}> {c.art} ... {c.datumsstempel} </p>
-        //   ));
-        // console.log(cards);
-
         return (
             <div>
-                <h1>Hello from View</h1>
-                {/* {this.state.data.map(e => (<p key={e.id}>Der Datumsstempel: {e.datumsstempel} und die Art des Algorithmus: {e.art} und die Schritte: {e.schritte} </p>))} */}
-                {lines}
+                <h1>Hello from Node.js</h1>
                 <Link to="/">zurück zur Basis</Link>
+                {/* {Node.js Inhalt } */}
+                {lines}
+                <h2>Projektvorschlag</h2> }
+                <img width="700" height="auto" src="http://localhost:3001/images/projektvorschlag.png" />
             </div >
         )
     }
