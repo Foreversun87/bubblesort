@@ -9,3 +9,5 @@
 Der Algorithmus Bubblesort mit React visualisiert.
 
 [Video](https://youtu.be/TvtXrdjUid8)
+
+<a href="https://youtu.be/TvtXrdjUid8" target="new_plank">Video</a>
