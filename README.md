@@ -1,14 +1,12 @@
-# Installationsanleitung
+#bubblesort3
 
-
+## Installationsanleitung
 * Verzeichnis anwählen ==> git clone https://github.com/Foreversun87/bubblesort.git
 * cd bubblesort ==> npm install
 * **npm start**
 
-# Beschreibung
-Der Algorithmus Bubblesort mit React visualisiert.
-
-[Video](https://youtu.be/TvtXrdjUid8)
+## Beschreibung
+[Video](https://www.youtube.com/watch?v=qMUp_IXffgc)
 
 ## Punkte
 * Überprüfen der hanoi.js
