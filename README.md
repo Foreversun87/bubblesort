@@ -1,4 +1,4 @@
-#bubblesort3
+# bubblesort3
 
 ## Installationsanleitung
 * Verzeichnis anwählen ==> git clone https://github.com/Foreversun87/bubblesort.git
