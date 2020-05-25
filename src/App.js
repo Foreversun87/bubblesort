@@ -7,12 +7,12 @@ import { PDFViewer } from '@react-pdf/renderer';
 
 function App() {
   return (
-    // <div className="app">
-      <MyDocument />                
-      /* <BubblesortContextProvider>
+    <div className="app">
+      {/* <MyDocument />                 */}
+     <BubblesortContextProvider>
         <Dashboard />
-      </BubblesortContextProvider> */
-    // </div>
+      </BubblesortContextProvider>
+     </div>
   );
 }
 
