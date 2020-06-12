@@ -26,6 +26,8 @@ export default class Bobosortcontainer extends React.Component {
                 aktBoard: this.allWerts[this.state.counter],
                 counter: this.state.counter + 1
             });
+            
+            this.props.setStepsCounter(this.state.counter, this.state.steps, this.props.number);
 
         } else {
             clearInterval(this.state.setIntervalFn);
@@ -61,7 +63,7 @@ export default class Bobosortcontainer extends React.Component {
     }
 
     componentWillReceiveProps(prevProps, context) {
-        // console.log("WillReceiveProps BOBO");
+        console.log("WillReceiveProps BOBO ENdlos?");
         if (context.reload) {
             this.reload();
             context.handleClickReloadNot();

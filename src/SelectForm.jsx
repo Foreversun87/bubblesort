@@ -3,6 +3,7 @@ import Bobosortcontainer from "./components/bobosort/Bobosortcontainer";
 import Bubblesortcontainer from "./components/bubblesort/Bubblesortcontainer";
 import Hanoicontainer from "./components/hanoi/Hanoicontainer";
 import KeinSort from "./components/keinsort/KeinSort";
+import Tacho from "./components/tacho/Tacho";
 import { BubblesortContext } from "./components/bubblesort/BubblesortContext";
 
 export default class SelectForm extends React.Component {
@@ -10,9 +11,12 @@ export default class SelectForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: "null"
-            // steps: 0,
-            // counter: 0
+            title: "null",
+            algorithmus1: {
+                step: null,
+                counter: null
+            }
+            
         }
 
     }
@@ -24,17 +28,22 @@ export default class SelectForm extends React.Component {
                 title: event.target.value
             }
         )
-        if (event.target.value === "null"){
+        if (event.target.value === "null") {
             this.context.setCompleted(this.props.number);
         }
     }
 
-    // setStepsCounter = (counter, step) =>{
-    //     this.setState({
-    //         steps: step,
-    //         counter: counter
-    //     })
-    // }
+    setStepsCounter = (counter, step, number) => {
+        if (number === 1) {
+            console.log("Hier eine Endlosschleife");
+            this.setState({
+                    algorithmus1:{
+                        step: step,
+                        counter: counter
+                    }}
+            );
+        }
+    }
 
     render() {
         return (
@@ -49,15 +58,12 @@ export default class SelectForm extends React.Component {
                             <option value="hanoi">Türme von Hanoi</option>
                         </select>
                     </form>
-                    <div className="progressbar">
-                        {this.state.counter > 0 ? <h1 style={{ color: "white" }}>{Math.floor(this.state.counter / this.state.steps * 100)}%</h1> : null}
-                    </div>
-
+                    <Tacho />
                 </div>
-                {this.state.title === "bobo" ? <Bobosortcontainer number={this.props.number} />
-                    : this.state.title === "bubble" ? <Bubblesortcontainer number={this.props.number} /> 
-                    : this.state.title === "hanoi" ? <Hanoicontainer number={this.props.number} />
-                    : this.state.title === "null" ? <KeinSort number={this.props.number}  /> : null}
+                {this.state.title === "bobo" ? <Bobosortcontainer number={this.props.number} setStepsCounter={this.setStepsCounter} />
+                    : this.state.title === "bubble" ? <Bubblesortcontainer number={this.props.number} setCounterSteps={this.setStepsCounter} />
+                        : this.state.title === "hanoi" ? <Hanoicontainer number={this.props.number} setCounterSteps={this.setStepsCounter} />
+                            : this.state.title === "null" ? <KeinSort number={this.props.number} /> : null}
             </div>
         )
     }

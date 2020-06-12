@@ -36,7 +36,7 @@ export default class Viewer extends React.Component {
                 {/* {Node.js Inhalt } */}
                 {lines}
                 <h2>Projektvorschlag</h2> }
-                <img width="700" height="auto" src="http://localhost:3001/images/projektvorschlag.png" />
+                {/* <img width="700" height="auto" src="http://localhost:3001/images/projektvorschlag.png" /> */}
             </div >
         )
     }
